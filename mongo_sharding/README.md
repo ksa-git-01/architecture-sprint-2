@@ -11,7 +11,15 @@ docker compose up -d
 
 3. Выполнить команду:
 ```shell
+./mongo-sharding-init-configsrv.sh
+```
+
+4. Выполнить команду:
+```shell
 ./mongo-sharding-init.sh
 ```
 
-4. Перейти на странице http://localhost:8080 убедиться что 
+5. Перейти на страницу http://localhost:8080 убедиться что:
+- mongo_topology_type = "Sharded"
+- массив shards содержит информацию о шардах: shard1 и shard2
+- в атрибуте documents_count коллекции helloDoc содержит информацию о кол-ве документов в коллекции >=1000
