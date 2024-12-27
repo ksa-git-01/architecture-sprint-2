@@ -33,7 +33,6 @@ sh.addShard( "shard2/shard2-primary:27019");
 sh.enableSharding("somedb");
 
 use somedb
-db.helloDoc.drop()
 sh.shardCollection("somedb.helloDoc", { "name" : "hashed" } )
 for(var i = 0; i < 1000; i++) db.helloDoc.insert({age:i, name:"ly"+i})
 exit(); 

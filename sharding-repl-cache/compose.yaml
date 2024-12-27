@@ -178,88 +178,23 @@ services:
     environment:
       MONGODB_URL: "mongodb://mongos_router:27020"
       MONGODB_DATABASE_NAME: "somedb"
-      REDIS_URL: "redis://redis-1:6379" 
+      REDIS_URL: "redis://redis:6379" 
     networks:
       app-network:
         ipv4_address: 173.17.0.6   
 
-  redis-1:
+  redis:
     image: "redis:latest"
-    container_name: redis-1
+    container_name: redis
     ports:
       - "6379"
     volumes:
-      - redis-1_data:/data
+      - redis_data:/data
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
     command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
     networks:
       app-network:
         ipv4_address: 173.17.0.2
-
-  redis-2:
-    image: "redis:latest"
-    container_name: redis-2
-    ports:
-      - "6379"
-    volumes:
-      - redis-2_data:/data
-      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
-    networks:
-      app-network:
-        ipv4_address: 173.17.0.3
-
-  redis-3:
-    image: "redis:latest"
-    container_name: redis-3
-    ports:
-      - "6379"
-    volumes:
-      - redis-3_data:/data
-      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
-    networks:
-      app-network:
-        ipv4_address: 173.17.0.4
-
-  redis-4:
-    image: "redis:latest"
-    container_name: redis-4
-    ports:
-      - "6379"
-    volumes:
-      - redis-4_data:/data
-      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
-    networks:
-      app-network:
-        ipv4_address: 173.17.0.5
-
-  redis-5:
-    image: "redis:latest"
-    container_name: redis-5
-    ports:
-      - "6379"
-    volumes:
-      - redis-5_data:/data
-      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
-    networks:
-      app-network:
-        ipv4_address: 173.17.0.15
-
-  redis-6:
-    image: "redis:latest"
-    container_name: redis-6
-    ports:
-      - "6379"
-    volumes:
-      - redis-6_data:/data
-      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-    command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
-    networks:
-      app-network:
-        ipv4_address: 173.17.0.16
 
 networks:
   app-network:
@@ -277,9 +212,4 @@ volumes:
   shard2-primary-data:
   shard2-replica1-data:
   shard2-replica2-data:
-  redis-1_data: {}
-  redis-2_data: {}
-  redis-3_data: {}
-  redis-4_data: {}
-  redis-5_data: {}
-  redis-6_data: {}
+  redis_data: {}
