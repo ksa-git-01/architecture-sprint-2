@@ -1,5 +1,3 @@
-# Задания 2, 3, 4
-
 ## Как запустить
 
 1. Открыть терминал, перейти в папку проекта sharding-repl-cache
@@ -32,11 +30,3 @@ docker compose up -d
 9. Запустить выполнение запроса к эндпоинту указав параметр имени коллекции = helloDoc
 Убедиться что:
 - второй и последующие вызовы эндпоинта выполняются значительно быстрее чем первый. <100мс
-
-# Задания 1, 5, 6
-
-Итоговая схема: 
-https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1#G1eWbgMgXI1BwzZT7KpEQGrC4EfWEo9h87
-
-И на свякий случай ссылка на сам файл:
-https://drive.google.com/file/d/1eWbgMgXI1BwzZT7KpEQGrC4EfWEo9h87/view?usp=sharing 
